@@ -90,7 +90,7 @@ let score = 0 ;
 const loadQuestion = () =>{    
     const questionList = quizDB[questionCount];    
     const lastAnswer = localStorage.getItem(questionList.id) ; 
-    console.log("last Answer" + lastAnswer) ; 
+  
     question.innerHTML = questionList.id + ".  " + questionList.question;
 
     option1.innerHTML = questionList.options[0];
@@ -155,22 +155,15 @@ const deselectAll = () => {
 }
 
 submit.addEventListener('click', () =>{
-    if(questionCount == 0 ){
-        prev.classList.remove('showPrev');
-    }
-
-    if(questionCount == quizDB.length -1  ){
-        submit.classList.add('hideNext');
-    }else{
-        submit.classList.remove('hideNext');
-    }
+    
     
     const checkAnswer = getCheckAnswer() ;
-    console.log("checkAnswer" + checkAnswer) ; 
+
     const questionList = quizDB[questionCount];
     localStorage.setItem(questionList.id, checkAnswer+"");
-    if(checkAnswer == questionList.answer){
-         score ++;
+    if(checkAnswer == questionList.answer && localStorage.getItem("ANS_"+questionList.id) ==null){
+        localStorage.setItem("ANS_"+questionList.id, checkAnswer+"");
+        score ++;
     }
     questionCount++;
     deselectAll();
@@ -182,19 +175,36 @@ submit.addEventListener('click', () =>{
         `;
         showScore.classList.remove('scoreArea') ; 
     }    
-})
 
-prev.addEventListener('click', () =>{        
-    if(questionCount == 1 ){
+    console.log(" Next questionCount: " +questionCount ) ; 
+    if(questionCount == 0 ){
         prev.classList.add('showPrev');
+    }else{
+        prev.classList.remove('showPrev');        
     }
-    if(questionCount == quizDB.length -1  ){
+    if(questionCount == quizDB.length   ){
         submit.classList.add('hideNext');
     }else{
         submit.classList.remove('hideNext');
     }
+})
+
+prev.addEventListener('click', () =>{        
+    deselectAll();
     questionCount--;    
     //if(questionCount < quizDB.length){
         loadQuestion();
     //}
+
+    console.log(" PREV questionCount: " +questionCount ) ; 
+    if(questionCount == 0 ){
+        prev.classList.add('showPrev');
+    }else{
+        prev.classList.remove('showPrev');        
+    }
+    if(questionCount == quizDB.length    ){
+        submit.classList.add('hideNext');
+    }else{
+        submit.classList.remove('hideNext');
+    }
 })
