@@ -1,40 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
 * {
-  font-family: 'Open Sans', sans-serif;
-}
-
-html,
-body {
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+  font-weight: 300;
 }
 
-#main {
+html {
+ font-size: 60%
+}
+ 
+.main-div {
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: rgb(239, 244, 242);
+
+}
+.inner-div {
+  width: 40vw;
+  background-color: #c7e9f7;
+  padding: 3rem 8rem;
+  border: radius 1rem;
+  box-shadow: 0 1rem 1rem -0.7rem rgb(18, 64, 74);
 }
 
-p {
-  margin: 4px;
+.inner-div h2{
+  font: size 4.5rem;
+  font-weight: 800;
+  margin-top:1.5rem;
+  margin: 1rem 0 4rem 0; 
+  font-size: 3rem;
 }
 
-code {
-  font-family: monospace;
-  font-size: 1rem;
-  background-color: rgb(219, 219, 219);
-  padding: 2px;
+.inner-div li{
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  list-style:none;
+  
+}
+input{
+  cursor: pointer;
 }
 
-#api-status {
-  margin-top: 100px;
-  font-family: monospace;
+ #submit, .btn {
+
+
+  padding:1rem 3rem;
+  outline: none;
+  font-size: 2rem;
+  font-size: 2rem;
+  display:black;
+  margin:auto;
+  border:none;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #74b9ff;
+  margin-top: 4rem;
+  float: right;
+
+}
+
+#prev {
+  padding:1rem 3rem;
+  outline: none;
+  font-size: 2rem;
+  font-size: 2rem;
+  display:black;
+  margin:auto;
+  border:none;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #74b9ff;
+  margin-top: 4rem;
+  
+}
+.showPrev {
+  display: none;
+}
+
+.hideNext {
+  display: none;
+}
+
+#submit:hover{
+  background-color: #0984e3;
+}
+#prev:hover{
+  background-color: #0984e3;
+ 
+}
+#Next {
+  padding:1rem 3rem;
+  outline: none;
+  font-size: 2rem;
+  font-size: 2rem;
+  display:black;
+  margin:auto;
+  border:none;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #74b9ff;
+  margin-top: 4rem;
+
+}
+#Next:hover{
+  background-color: #0984e3;
+}
+
+#showScore{
+  background-color: #dfe6e9;
+  margin-top: 3rem;
+  padding:  3rem 4rem;
+  box-shadow: 0 1rem 1rem -0.7rem rgba(0,0,0,0.4);
+}
+
+#showScore h3{
+  font-size: 3rem;
   text-align: center;
-  font-size: 1rem;
-  background-color: rgb(219, 219, 219);
-  padding: 10px;
 }
+.scoreArea {
+  display: none;
+}
+

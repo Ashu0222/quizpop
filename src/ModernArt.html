@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+<script>
+    var i = 0;
+    let arr = [
+    {
+      "id": 1,
+      "question": "Which of the following is not a type of music notation?",
+      "options": ["Standard notation", "Tab notation", "Morse code notation", "Graphics notation"],
+      "answer": "Morse code notation",
+      "category": "music"
+    },
+    {
+      "id": 2,
+      "question": "What is the most common time signature in classical music?",
+      "options": ["3/4", "4/4", "5/4", "6/8"],
+      "answer": "4/4",
+      "category": "music"
+    },
+    {
+      "id": 3,
+      "question": "Which of the following is not a type of instrument in a symphony orchestra?",
+      "options": ["Violin", "Piano", "Harp", "Theremin"],
+      "answer": "Theremin",
+      "category": "music"
+    },
+    {
+      "id": 4,
+      "question": "What is the most common key in pop music?",
+      "options": ["C Major", "G Major", "D Major", "A Major"],
+      "answer": "C Major",
+      "category": "music"
+    },
+    {
+      "id": 5,
+      "question": "Which of the following is not a type of chord?",
+      "options": ["Major", "Minor", "Diminished", "Flat"],
+      "answer": "Flat",
+      "category": "music"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is not a type of music genre?",
+      "options": ["Jazz", "Blues", "Rock", "Applesauce"],
+      "answer": "Applesauce",
+      "category": "music"
+    },
+    {
+      "id": 7,
+      "question": "Which of the following is not a type of music theory?",
+      "options": ["Harmony", "Counterpoint", "Form", "Cooking"],
+      "answer": "Cooking",
+      "category": "music"
+    },
+    {
+      "id": 8,
+      "question": "What is the most common tempo marking in classical music?",
+      "options": ["Allegro", "Andante", "Adagio", "Moderato"],
+      "answer": "Allegro",
+      "category": "music"
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is not a type of musical form?",
+      "options": ["Sonata", "Symphony", "Concerto", "Spaghetti"],
+      "answer": "Spaghetti",
+      "category": "music"
+    },
+    {
+      "id": 10,
+      "question": "Which of the following is not a type of music notation software?",
+      "options": ["Sibelius", "Finale", "MuseScore", "Microsoft Word"],
+      "answer": "Microsoft Word",
+      "category": "music"
+    }
+    ];
+    function getQuestion(act){        
+        var question  = arr[i];
+        document.getElementById("question").innerHTML = arr[i].id + ":" +arr[i].question ;
+        document.getElementById("ans1").value = arr[i].options[0] ;
+        document.getElementById("ans2").value = arr[i].options[1] ;
+        document.getElementById("ans3").value = arr[i].options[2] ;
+        document.getElementById("ans4").value = arr[i].options[3] ;
+
+        document.getElementById("label_ans1").innerHTML = arr[i].options[0] ;
+        document.getElementById("label_ans2").innerHTML = arr[i].options[1] ;
+        document.getElementById("label_ans3").innerHTML = arr[i].options[2] ;
+        document.getElementById("label_ans4").innerHTML = arr[i].options[3] ;
+        console.log(arr[i].id);
+        console.log(arr[i].question);
+        if(act == 'prev'){                        
+            if(i != 0){
+                i = i-1;
+            }
+        }else{            
+            if(i < arr.length - 1){
+                i = i + 1;
+            }            
+        }        
+    };
+    
+   
+
+</script>
+<body onload="getQuestion('load')">
+
+    <div class="main-div">
+        <div class="inner-div">
+            <h2 id="question">Question</h2>
+            <ul>
+                <li>
+                    <input class="answer" type="radio" id="ans1" name="question_id" >
+                    <label id="label_ans1"></label>
+                </li>
+                <li>
+                    <input class="answer" type="radio" id="ans2" name="question_id" >
+                    <label id="label_ans2"></label>
+                </li>
+                <li>
+                    <input type="radio" id="ans3" name="question_id" >
+                    <label id="label_ans3"></label>
+                </li>
+                <li>
+                    <input type="radio" id="ans4" name="question_id" >
+                    <label id="label_ans4"></label>
+                </li>
+            </ul>
+           
+            <div>
+                <div><button onclick="getQuestion('prev')" name="prev" id="Previous">Previous</button></div>      
+                <div><button onclick="getQuestion('next')" name="next" id="Next">Next</button></div>
+            </div>  
+            <div id="showScore" class="scoreArea">
+
+
+            </div>   
+        </div>
+      </div>     
+    </div>
+</body>
+</html>
