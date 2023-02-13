@@ -13,7 +13,8 @@ This project is covoring maximum functionlality that most of the time get use.it
 ## watch the full video!
 <a href="youtube link" target="_blank">
 
-<img src="https://whimsical.com/quizpop-Xt9YJ81oYnaK3JzTvVaQ82" alt="FlowChart" width="50" height="150" border="10"></a>
+## FlowChart
+https://whimsical.com/quizpop-Xt9YJ81oYnaK3JzTvVaQ82
 
 ## For Installation 
 Download Visual Studio Code.
