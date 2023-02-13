@@ -18,12 +18,11 @@ html {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background-color: rgb(239, 244, 242);
+  
 
 }
 .inner-div {
-  width: 40vw;
-  
+  width: 40vw;  
   background-color: #c7e9f7;
   padding: 3rem 8rem;
   border: radius 1rem;
@@ -32,16 +31,16 @@ html {
 
 .languageButton {
   padding:1rem 3rem;
-  outline: none;
-  font-size: 2rem;
-  font-size: 2rem;
+  display: inline-block;
+  font-size: 2rem; 
   display:black;
   margin:auto;
   border:none;
-  text-transform: uppercase;
   color: #fff;
   background-color: #74b9ff;
   margin-top: 4rem;
+  margin-right: 2rem;
+  
 }
 .languageButton:hover{
   background-color: #0984e3;
@@ -131,15 +130,13 @@ input{
 #Home {
   padding:1rem 3rem;
   outline: none;
-  font-size: 2rem;
-  font-size: 2rem;
+  font-size: 2rem;  
   display:black;
   margin:auto;
-  border:none;
-  text-transform: uppercase;
+  border:none;  
   text-align:center;
   font-size: 4rem;
-font-weight: bold;
+  font-weight: bold;
   margin-top: 4rem;
 }
 #Home:hover{
@@ -161,3 +158,9 @@ font-weight: bold;
   display: none;
 }
 
+@media screen and (max-width: 500px) {
+  .main-div,
+  .inner-div {
+    width: 100%;
+  }
+}
