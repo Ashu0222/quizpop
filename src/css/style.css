@@ -78,7 +78,7 @@ input{
   color: #fff;
   background-color: #74b9ff;
   margin-top: 4rem;
-  float: right;
+  width:150px;
 
 }
 
@@ -94,6 +94,8 @@ input{
   color: #fff;
   background-color: #74b9ff;
   margin-top: 4rem;
+  text-align: center;
+  
 }
 .showPrev {
   display: none;
