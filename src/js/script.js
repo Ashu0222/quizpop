@@ -155,8 +155,7 @@ const deselectAll = () => {
 }
 
 submit.addEventListener('click', () =>{
-    
-    
+        
     const checkAnswer = getCheckAnswer() ;
 
     const questionList = quizDB[questionCount];
