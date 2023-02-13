@@ -1,75 +1,85 @@
 const quizDB = [
     {
-      "id": 1,
-      "question": "Which of the following is not a type of music notation?",
-      "options": ["Standard notation", "Tab notation", "Morse code notation", "Graphics notation"],
-      "answer": "Morse code notation",
-      "category": "music"
+      "id": 21,
+      "srno": 1,
+      "question": "What is the correct syntax for an if statement in Python?",
+      "options": ["if (condition):", "if condition", "if: condition", "if condition:"],
+      "answer": "if condition:",
+      "category": "coding"
     },
     {
-      "id": 2,
-      "question": "What is the most common time signature in classical music?",
-      "options": ["3/4", "4/4", "5/4", "6/8"],
-      "answer": "4/4",
-      "category": "music"
+      "id": 22,
+      "srno": 2,
+      "question": "Which of the following is not a data type in JavaScript?",
+      "options": ["String", "Number", "Boolean", "ArrayList"],
+      "answer": "ArrayList",
+      "category": "coding"
     },
     {
-      "id": 3,
-      "question": "Which of the following is not a type of instrument in a symphony orchestra?",
-      "options": ["Violin", "Piano", "Harp", "Theremin"],
-      "answer": "Theremin",
-      "category": "music"
+      "id": 23,
+      "srno": 3,
+      "question": "Which of the following is used to declare a variable in Java?",
+      "options": ["var", "let", "const", "int"],
+      "answer": "int",
+      "category": "coding"
     },
     {
-      "id": 4,
-      "question": "What is the most common key in pop music?",
-      "options": ["C Major", "G Major", "D Major", "A Major"],
-      "answer": "C Major",
-      "category": "music"
+      "id": 24,
+      "srno": 4,
+      "question": "What is the correct syntax for a for loop in C#?",
+      "options": ["for i = 0 to 10", "for (i = 0; i <= 10; i++)", "for (int i = 0; i <= 10)", "for i in range(0, 10)"],
+      "answer": "for (i = 0; i <= 10; i++)",
+      "category": "coding"
     },
     {
-      "id": 5,
-      "question": "Which of the following is not a type of chord?",
-      "options": ["Major", "Minor", "Diminished", "Flat"],
-      "answer": "Flat",
-      "category": "music"
+      "id": 25,
+      "srno": 5,
+      "question": "Which of the following is not a looping structure in PHP?",
+      "options": ["while", "for", "do-while", "foreach"],
+      "answer": "foreach",
+      "category": "coding"
     },
     {
-      "id": 6,
-      "question": "Which of the following is not a type of music genre?",
-      "options": ["Jazz", "Blues", "Rock", "Applesauce"],
-      "answer": "Applesauce",
-      "category": "music"
+      "id": 26,
+      "srno": 6,
+      "question": "Which of the following is not a valid operator in C++?",
+      "options": ["+", "-", "*", "$"],
+      "answer": "$",
+      "category": "coding"
     },
     {
-      "id": 7,
-      "question": "Which of the following is not a type of music theory?",
-      "options": ["Harmony", "Counterpoint", "Form", "Cooking"],
-      "answer": "Cooking",
-      "category": "music"
+      "id": 27,
+      "srno": 7,
+      "question": "In which programming language is 'print' used for displaying output?",
+      "options": ["Python", "JavaScript", "Java", "C++"],
+      "answer": "Python",
+      "category": "coding"
     },
     {
-      "id": 8,
-      "question": "What is the most common tempo marking in classical music?",
-      "options": ["Allegro", "Andante", "Adagio", "Moderato"],
-      "answer": "Allegro",
-      "category": "music"
+      "id": 28,
+      "srno": 8,
+      "question": "What is the correct syntax for a function in Ruby?",
+      "options": ["function name()", "def name", "function name", "def name()"],
+      "answer": "def name()",
+      "category": "coding"
     },
     {
-      "id": 9,
-      "question": "Which of the following is not a type of musical form?",
-      "options": ["Sonata", "Symphony", "Concerto", "Spaghetti"],
-      "answer": "Spaghetti",
-      "category": "music"
+      "id": 29,
+      "srno": 9,
+      "question": "Which of the following is not a type of variable in Swift?",
+      "options": ["Int", "String", "Double", "Object"],
+      "answer": "Object",
+      "category": "coding"
     },
     {
-      "id": 10,
-      "question": "Which of the following is not a type of music notation software?",
-      "options": ["Sibelius", "Finale", "MuseScore", "Microsoft Word"],
-      "answer": "Microsoft Word",
-      "category": "music"
+      "id": 30,
+      "srno": 10,
+      "question": "In which programming language is '#' used for commenting?",
+      "options": ["Python", "JavaScript", "Java", "C++"],
+      "answer": "C++",
+      "category": "coding"
     }
-    ];
+  ];
 
 const question =document.querySelector('.question');
 const option1 =document.querySelector('#option1');
@@ -91,7 +101,7 @@ const loadQuestion = () =>{
     const questionList = quizDB[questionCount];    
     const lastAnswer = localStorage.getItem(questionList.id) ; 
   
-    question.innerHTML = questionList.id + ".  " + questionList.question;
+    question.innerHTML = questionList.srno + ".  " + questionList.question;
 
     option1.innerHTML = questionList.options[0];
     option2.innerHTML = questionList.options[1];
@@ -170,11 +180,11 @@ submit.addEventListener('click', () =>{
     if(questionCount < quizDB.length){        
         loadQuestion();
     }else{
+        localStorage.setItem("coding", "coding");
         showScore.innerHTML = `
             <h3> Your Score ${score}/${quizDB.length} </h3>
         `;
         showScore.classList.remove('scoreArea') ; 
-        localStorage.setItem("music", "music");
     }    
 
     console.log(" Next questionCount: " +questionCount ) ; 

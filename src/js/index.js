@@ -9,3 +9,16 @@
      .then((res) => res.json())
      .then((res) => (apiStatus.innerText = res.message));
  }
+
+ const music =document.querySelector('#music');
+ const ma =document.querySelector('#ma');
+ const coding =document.querySelector('#coding');
+if(localStorage.getItem("music") != null){
+  music.disabled = true;
+}
+if(localStorage.getItem("ma") != null){
+  ma.disabled = true;
+}
+if(localStorage.getItem("coding") != null){
+  coding.disabled = true;
+}

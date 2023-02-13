@@ -1,75 +1,85 @@
 const quizDB = [
     {
-      "id": 1,
-      "question": "Which of the following is not a type of music notation?",
-      "options": ["Standard notation", "Tab notation", "Morse code notation", "Graphics notation"],
-      "answer": "Morse code notation",
-      "category": "music"
+      "id": 11,
+      "srno" : 1 ,
+      "question": "Which artist is known for coining the term 'Surrealism'?",
+      "options": ["Pablo Picasso", "Salvador Dali", "Vincent van Gogh", "Henri Matisse"],
+      "answer": "Salvador Dali",
+      "category": "modern-art"
     },
     {
-      "id": 2,
-      "question": "What is the most common time signature in classical music?",
-      "options": ["3/4", "4/4", "5/4", "6/8"],
-      "answer": "4/4",
-      "category": "music"
+      "id": 12,
+      "srno" : 2 ,
+      "question": "Which movement is associated with the use of abstract forms and shapes in art?",
+      "options": ["Impressionism", "Expressionism", "Futurism", "Cubism"],
+      "answer": "Cubism",
+      "category": "modern-art"
     },
     {
-      "id": 3,
-      "question": "Which of the following is not a type of instrument in a symphony orchestra?",
-      "options": ["Violin", "Piano", "Harp", "Theremin"],
-      "answer": "Theremin",
-      "category": "music"
+      "id": 13,
+      "srno" : 3 ,
+      "question": "Which artist is known for painting the work 'The Persistence of Memory'?",
+      "options": ["Pablo Picasso", "Salvador Dali", "Vincent van Gogh", "Henri Matisse"],
+      "answer": "Salvador Dali",
+      "category": "modern-art"
     },
     {
-      "id": 4,
-      "question": "What is the most common key in pop music?",
-      "options": ["C Major", "G Major", "D Major", "A Major"],
-      "answer": "C Major",
-      "category": "music"
+      "id": 14,
+      "srno" : 4 ,
+      "question": "Which artist is known for creating the painting 'The Scream'?",
+      "options": ["Vincent van Gogh", "Salvador Dali", "Edvard Munch", "Claude Monet"],
+      "answer": "Edvard Munch",
+      "category": "modern-art"
     },
     {
-      "id": 5,
-      "question": "Which of the following is not a type of chord?",
-      "options": ["Major", "Minor", "Diminished", "Flat"],
-      "answer": "Flat",
-      "category": "music"
+      "id": 15,
+      "srno" : 5 ,
+      "question": "What movement was associated with the use of bold, bright colors and thick brushstrokes?",
+      "options": ["Impressionism", "Expressionism", "Fauvism", "Cubism"],
+      "answer": "Fauvism",
+      "category": "modern-art"
     },
     {
-      "id": 6,
-      "question": "Which of the following is not a type of music genre?",
-      "options": ["Jazz", "Blues", "Rock", "Applesauce"],
-      "answer": "Applesauce",
-      "category": "music"
+      "id": 16,
+      "srno" : 6 ,
+      "question": "What movement was associated with the use of bright colors, simplified forms, and a focus on movement and speed",
+      "options": ["Impressionism", "Futurism", "Surrealism", "Abstract Expressionism"],
+      "answer": "Futurism",
+      "category": "modern-art"
     },
     {
-      "id": 7,
-      "question": "Which of the following is not a type of music theory?",
-      "options": ["Harmony", "Counterpoint", "Form", "Cooking"],
-      "answer": "Cooking",
-      "category": "music"
+      "id": 17,
+      "srno" : 7 ,
+      "question": "Which artist is known for creating the painting 'Water Lilies'?",
+      "options": ["Claude Monet", "Paul Cezanne", "Paul Gauguin", "Paul Klee"],
+      "answer": "Claude Monet",
+      "category": "modern-art"
     },
     {
-      "id": 8,
-      "question": "What is the most common tempo marking in classical music?",
-      "options": ["Allegro", "Andante", "Adagio", "Moderato"],
-      "answer": "Allegro",
-      "category": "music"
+      "id": 18,
+      "srno" : 8 ,
+      "question": "Which artist is known for creating the painting 'Les Demoiselles d'Avignon'?",
+      "options": ["Henri Matisse", "Vincent van Gogh", "Salvador Dali", "Pablo Picasso"],
+      "answer": "Pablo Picasso",
+      "category": "modern-art"
     },
     {
-      "id": 9,
-      "question": "Which of the following is not a type of musical form?",
-      "options": ["Sonata", "Symphony", "Concerto", "Spaghetti"],
-      "answer": "Spaghetti",
-      "category": "music"
+      "id": 19,
+      "srno" : 9 ,
+      "question": "Which artist is known for creating the painting 'Guernica'?",
+      "options": ["Claude Mone", "Paul Cezanne", "Pablo Picasso", "Vincent van Gogh"],
+      "answer": "Pablo Picasso",
+      "category": "modern-art"
     },
     {
-      "id": 10,
-      "question": "Which of the following is not a type of music notation software?",
-      "options": ["Sibelius", "Finale", "MuseScore", "Microsoft Word"],
-      "answer": "Microsoft Word",
-      "category": "music"
+      "id": 20,
+      "srno" : 10 ,
+      "question": "Which artist is known for creating the sculpture 'The Thinker'?",
+      "options": ["Auguste Rodin", "Alexander Calder", "Jean Arp", "Henry Moore"],
+      "answer": "Auguste Rodin",
+      "category": "modern-art"
     }
-    ];
+  ];
 
 const question =document.querySelector('.question');
 const option1 =document.querySelector('#option1');
@@ -91,7 +101,7 @@ const loadQuestion = () =>{
     const questionList = quizDB[questionCount];    
     const lastAnswer = localStorage.getItem(questionList.id) ; 
   
-    question.innerHTML = questionList.id + ".  " + questionList.question;
+    question.innerHTML = questionList.srno + ".  " + questionList.question;
 
     option1.innerHTML = questionList.options[0];
     option2.innerHTML = questionList.options[1];
@@ -174,7 +184,7 @@ submit.addEventListener('click', () =>{
             <h3> Your Score ${score}/${quizDB.length} </h3>
         `;
         showScore.classList.remove('scoreArea') ; 
-        localStorage.setItem("music", "music");
+        localStorage.setItem("ma", "ma");
     }    
 
     console.log(" Next questionCount: " +questionCount ) ; 
