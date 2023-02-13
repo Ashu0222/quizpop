@@ -11,9 +11,9 @@ This app enable students to pick a topic and solve the Quiz.
 ## This Quiz a fully function example project written in HTML,CSS,JavaScript only.
 This project is covoring maximum functionlality that most of the time get use.it's very easy and fun project.
 ## watch the full video!
-<a href="https://www.youtube.com/watch?v=d62mVurD9Ac" target="_blank">
+https://www.youtube.com/watch?v=d62mVurD9Ac
 
-## FlowChart
+## FlowCharts
 https://whimsical.com/quizpop-Xt9YJ81oYnaK3JzTvVaQ82
 
 ## For Installation 
