@@ -23,6 +23,7 @@ html {
 }
 .inner-div {
   width: 40vw;
+  
   background-color: #c7e9f7;
   padding: 3rem 8rem;
   border: radius 1rem;
@@ -122,9 +123,26 @@ input{
   color: #fff;
   background-color: #74b9ff;
   margin-top: 4rem;
-
 }
 #Next:hover{
+  background-color: #0984e3;
+}
+
+#Home {
+  padding:1rem 3rem;
+  outline: none;
+  font-size: 2rem;
+  font-size: 2rem;
+  display:black;
+  margin:auto;
+  border:none;
+  text-transform: uppercase;
+  text-align:center;
+  font-size: 4rem;
+font-weight: bold;
+  margin-top: 4rem;
+}
+#Home:hover{
   background-color: #0984e3;
 }
 
